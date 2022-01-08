@@ -29,4 +29,23 @@
     <string name="free_memory_text">Free Heap Memory : </string>
     <string name="screen_Text">Screen Size : </string>
     <string name="network_type_text">Network Type : </string>
+
+<!--    Login $ Sign up-->
+    <string name="alreadyHaveAn_text">Already\nhave an\nAccount?</string>
+    <string name="loginWith_text">Login with Email or Phone Number</string>
+    <string name="emailPhoneNumber_text">Email Or Phone Number</string>
+    <string name="password_text">Password</string>
+    <string name="troubleLogin_text">Trouble Logging In?</string>
+    <string name="login_text">Login</string>
+    <string name="newUser_text">New User? Register Now</string>
+    <string name="useOtherMethod_text">Use Other Method</string>
+
+    <string name="hereYourFirstStep_text">Hers\'s\nyour first\nstep with\nus!</string>
+    <string name="fillTheForm_text">Sign-Up with Email or Phone Number</string>
+    <string name="firstName_text">First Name</string>
+    <string name="lastName_text">Last Name</string>
+    <string name="signup_text">Sign-Up</string>
+
+
+
 </resources>

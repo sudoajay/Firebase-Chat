@@ -12,6 +12,10 @@
     <color name="headingNormalTextColor">#dae1e7</color>
     <color name="dark_gray">#3f3f3f</color>
 
+<!--    Login & Sign up-->
+    <color name="backgroundBoxColor">#272727</color>
+
+
 
     <!--    Send Feedback // Reminder -->
     <color name="boxTextColor">#dae1e7</color>

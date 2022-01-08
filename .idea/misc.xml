@@ -4,9 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/feedback_background_button.xml" value="0.36875" />
+        <entry key="app/src/main/res/drawable/ic_close_window.xml" value="0.36875" />
+        <entry key="app/src/main/res/drawable/ic_google.xml" value="0.36875" />
+        <entry key="app/src/main/res/drawable/ic_google_com.xml" value="0.36875" />
         <entry key="app/src/main/res/drawable/ic_image_small.xml" value="0.36875" />
+        <entry key="app/src/main/res/drawable/ic_login.xml" value="0.36875" />
+        <entry key="app/src/main/res/drawable/loginandsignup_button_effect.xml" value="0.36875" />
+        <entry key="app/src/main/res/layout/activity_Signup.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/activity_send_feedback.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/activity_sogin.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/layout_system_info.xml" value="0.35260416666666666" />
       </map>
     </option>

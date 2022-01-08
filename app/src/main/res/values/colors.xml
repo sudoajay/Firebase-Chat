@@ -14,7 +14,8 @@
     <color name="headingNormalTextColor">#353131</color>
     <color name="dark_gray">#3f3f3f</color>
 
-
+    <!--    Login & Sign up-->
+    <color name="backgroundBoxColor">#ffffff</color>
 
     <!--    Send Feedback-->
     <color name="boxTextColor">#353131</color>

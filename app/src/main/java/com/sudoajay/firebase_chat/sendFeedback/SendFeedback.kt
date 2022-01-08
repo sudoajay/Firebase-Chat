@@ -2,7 +2,6 @@ package com.sudoajay.firebase_chat.sendFeedback
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -12,7 +11,6 @@ import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.view.View
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
@@ -20,7 +18,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.databinding.DataBindingUtil
-import com.sudoajay.firebase_chat.BaseActivity
+import com.sudoajay.firebase_chat.activity.BaseActivity
 import com.sudoajay.firebase_chat.R
 import com.sudoajay.firebase_chat.databinding.ActivitySendFeedbackBinding
 

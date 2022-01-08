@@ -8,12 +8,14 @@
     <color name="mainBgColor">#121212</color>
     <color name="bgBoxColor">#171717</color>
     <color name="swipeSchemeColor">#7DC4EC</color>
-    <color name="swipeBgColor">#121212</color>
     <color name="headingNormalTextColor">#dae1e7</color>
-    <color name="dark_gray">#3f3f3f</color>
+
 
 <!--    Login & Sign up-->
     <color name="backgroundBoxColor">#272727</color>
+    <color name="backgroundButtonBoxColor">#272727</color>
+    <color name="textColor">#dae1e7</color>
+
 
 
 

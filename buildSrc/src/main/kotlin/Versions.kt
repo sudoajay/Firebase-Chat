@@ -32,6 +32,7 @@ object Versions {
         const val WebKit = "1.2.0"
         const val FragmentKTX = "1.3.6"
         const val ActivityKTX = "1.3.1"
+        const val NavVersion = "2.3.5"
 
         const val Room = "2.4.0"
         const val Paging = "3.1.0"

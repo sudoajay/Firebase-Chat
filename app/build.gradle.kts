@@ -8,6 +8,9 @@ plugins {
     id ("kotlin-parcelize")
     //    Google services
     id("com.google.gms.google-services")
+//    Nav fragment args
+    id("androidx.navigation.safeargs")
+
 }
 android {
     compileSdk =AppConfig.compileSdkVersion

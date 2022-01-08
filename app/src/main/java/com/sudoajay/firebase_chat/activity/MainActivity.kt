@@ -1,11 +1,9 @@
-package com.sudoajay.firebase_chat.main
+package com.sudoajay.firebase_chat.activity
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.databinding.DataBindingUtil
-import com.sudoajay.firebase_chat.BaseActivity
 import com.sudoajay.firebase_chat.R
 import com.sudoajay.firebase_chat.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint

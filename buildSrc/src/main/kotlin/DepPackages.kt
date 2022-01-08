@@ -27,6 +27,10 @@ fun DependencyHandler.implementAndroidX(){
     add("implementation",Dependencies.Coroutine.coroutineCore)
     add("implementation",Dependencies.Coroutine.coroutineAndroid)
     add("implementation", Dependencies.Androidx.ActivityKtx)
+    add("implementation", Dependencies.Androidx.navigationFragment)
+    add("implementation", Dependencies.Androidx.navigationUi)
+
+
 }
 
 fun DependencyHandler.implementFirebaseGoogle(){

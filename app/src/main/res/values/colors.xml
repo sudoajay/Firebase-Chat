@@ -9,13 +9,12 @@
     <color name="mainBgColor">#59FFFFFF</color>
     <color name="bgBoxColor">#ffffff</color>
     <color name="swipeSchemeColor">#41a9e4</color>
-    <color name="swipeBgColor">#ffffff</color>
-    <color name="divider">#E6E6E6</color>
     <color name="headingNormalTextColor">#353131</color>
-    <color name="dark_gray">#3f3f3f</color>
 
     <!--    Login & Sign up-->
     <color name="backgroundBoxColor">#ffffff</color>
+    <color name="backgroundButtonBoxColor">#ffffff</color>
+    <color name="textColor">#41a9e4</color>
 
     <!--    Send Feedback-->
     <color name="boxTextColor">#353131</color>

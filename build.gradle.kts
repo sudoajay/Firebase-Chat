@@ -12,6 +12,8 @@ buildscript {
         classpath(Plugins.pluginKotlinGradle)
         classpath(Plugins.pluginDaggerHilt)
         classpath(Plugins.googleService)
+        classpath(Plugins.navArgs)
+
 
 
     }

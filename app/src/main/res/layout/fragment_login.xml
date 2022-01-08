@@ -27,7 +27,7 @@
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/lato"
                 android:text="@string/alreadyHaveAn_text"
-                android:textColor="@color/headingNormalTextColor"
+                android:textColor="@color/textColor"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="@+id/heading_ImageView"
                 app:layout_constraintEnd_toStartOf="@+id/heading_ImageView"
@@ -59,7 +59,7 @@
                 android:layout_marginStart="18dp"
                 android:fontFamily="@font/lato"
                 android:text="@string/loginWith_text"
-                android:textColor="@color/headingNormalTextColor"
+                android:textColor="@color/textColor"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -82,6 +82,7 @@
                 app:errorIconTint="@color/errorBoxColor"
                 app:errorTextColor="@color/errorBoxColor"
                 app:hintTextColor="@color/boxHoverColor"
+                app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginWith_TextView">
@@ -91,7 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,6 +114,7 @@
                 app:errorIconTint="@color/errorBoxColor"
                 app:errorTextColor="@color/errorBoxColor"
                 app:hintTextColor="@color/boxHoverColor"
+                app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/login_TextInputLayout">
@@ -121,8 +123,8 @@
                     android:id="@+id/password_TextInputLayoutEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:inputType="number"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,6 +149,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="80dp"
                 android:layout_marginBottom="8dp"
+                android:textSize="20sp"
                 android:background="@drawable/loginandsignup_button_effect"
                 android:fontFamily="@font/lato"
                 android:text="@string/login_text"
@@ -186,7 +189,7 @@
                 android:id="@+id/view1"
                 android:layout_width="0dp"
                 android:layout_height="2dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/headingNormalTextColor"
@@ -213,7 +216,7 @@
                 android:layout_height="2dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:background="@color/headingNormalTextColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/useOtherMethod_TextView"

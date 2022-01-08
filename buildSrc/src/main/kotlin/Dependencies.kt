@@ -8,6 +8,10 @@ class Dependencies {
         const val CoreKtx = "androidx.core:core-ktx:${Versions.MainDependencies.CoreKtx}"
         const val ActivityKtx = "androidx.activity:activity-ktx:${Versions.Dependencies.ActivityKTX}"
         const val FragmentKtx = "androidx.fragment:fragment-ktx:${Versions.Dependencies.FragmentKTX}"
+        const val navigationFragment ="androidx.navigation:navigation-fragment-ktx:${Versions.Dependencies.NavVersion}"
+        const val navigationUi ="androidx.navigation:navigation-ui-ktx:${Versions.Dependencies.NavVersion}"
+
+
     }
     object DependencyInjection {
         const val  daggerHilt = "com.google.dagger:hilt-android:${Versions.Dependencies.Dagger_Hilt}"

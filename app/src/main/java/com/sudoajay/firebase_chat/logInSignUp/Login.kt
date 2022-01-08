@@ -2,27 +2,34 @@ package com.sudoajay.firebase_chat.logInSignUp
 
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.view.WindowInsetsControllerCompat
-import com.sudoajay.firebase_chat.BaseActivity
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.sudoajay.firebase_chat.activity.BaseActivity
+import com.sudoajay.firebase_chat.R
+import com.sudoajay.firebase_chat.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
-class Login :BaseActivity() {
+class Login : Fragment() {
 
     private var isDarkTheme: Boolean = false
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        isDarkTheme = isSystemDefaultOn()
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (!isDarkTheme) {
-                WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars =
-                    true
-            }
+    lateinit var binding: FragmentLoginBinding
 
 
-        }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        val myDrawerView = layoutInflater.inflate(R.layout.fragment_login, null)
+        binding = FragmentLoginBinding.inflate(layoutInflater, myDrawerView as ViewGroup, false)
+
+
+        return binding.root
+
     }
 }

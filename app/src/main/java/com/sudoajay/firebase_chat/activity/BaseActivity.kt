@@ -1,4 +1,4 @@
-package com.sudoajay.firebase_chat
+package com.sudoajay.firebase_chat.activity
 
 import android.content.res.Configuration
 import android.os.Bundle

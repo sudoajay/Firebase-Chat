@@ -10,6 +10,11 @@ object Plugins {
         "com.google.dagger:hilt-android-gradle-plugin:${Versions.Dependencies.Dagger_Hilt}"
     const val googleService =
         "com.google.gms:google-services:${Versions.Project.Google_Services}"
+    const val navArgs =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.Dependencies.NavVersion}"
+
+
+
 
 
 

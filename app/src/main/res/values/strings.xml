@@ -47,5 +47,12 @@
     <string name="signup_text">Sign-Up</string>
 
 
+    <!--    Navigation Drawer-->
+    <string name="action_login">Login</string>
+    <string name="action_signup">Sign-Up</string>
+    <string name="action_sendFeedback">Send Feedback</string>
+
+
+
 
 </resources>

@@ -31,6 +31,8 @@ fun DependencyHandler.implementAndroidX(){
 
 fun DependencyHandler.implementFirebaseGoogle(){
     add("implementation" , Dependencies.FireBase.playServiceAuth)
+    add("implementation" , Dependencies.FireBase.FirebaseCommonktx)
+
 
     add("implementation" ,platform(Dependencies.FireBase.fireBaseBom))
     add("implementation" ,Dependencies.FireBase.firBaseAnalytics)

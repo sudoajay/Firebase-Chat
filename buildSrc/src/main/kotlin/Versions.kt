@@ -41,7 +41,7 @@ object Versions {
         const val Protobuf = "3.19.1"
 
         const val FireBaseBom = "29.0.3"
-        const val PlayServiceAuth ="20.0.0"
+        const val PlayService ="20.0.0"
         const val FireBaseUi = "8.0.0"
 
         const val Retrofit = "2.9.0"

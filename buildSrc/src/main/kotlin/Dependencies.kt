@@ -37,7 +37,8 @@ class Dependencies {
 
     object FireBase {
         // Google Sign In SDK
-        const val playServiceAuth = "com.google.android.gms:play-services-auth:${Versions.Dependencies.PlayServiceAuth}"
+        const val playServiceAuth = "com.google.android.gms:play-services-auth:${Versions.Dependencies.PlayService}"
+        const val FirebaseCommonktx = "com.google.android.gms:play-services-auth:${Versions.Dependencies.PlayService}"
 
         // Firebase SDK
         const val fireBaseBom = "com.google.firebase:firebase-bom:${Versions.Dependencies.FireBaseBom}"

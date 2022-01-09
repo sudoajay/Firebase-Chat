@@ -40,6 +40,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/signUpIcon_text"
                 app:srcCompat="@drawable/signup_night" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -92,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -124,12 +125,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/login_TextInputLayout"
+                android:id="@+id/signUp_TextInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -142,6 +143,7 @@
                 app:boxStrokeColor="@color/boxHoverColor"
                 app:boxStrokeWidth="1dp"
                 app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="clear_text"
                 app:counterTextColor="@color/errorBoxColor"
                 app:errorIconTint="@color/errorBoxColor"
                 app:errorTextColor="@color/errorBoxColor"
@@ -151,11 +153,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/lastName_TextInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_TextInputLayoutEditText"
+                    android:id="@+id/signUpTextInputLayoutEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -177,23 +179,24 @@
                 app:errorIconTint="@color/errorBoxColor"
                 app:errorTextColor="@color/errorBoxColor"
                 app:hintTextColor="@color/boxHoverColor"
+                app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/login_TextInputLayout">
+                app:layout_constraintTop_toBottomOf="@+id/signUp_TextInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_TextInputLayoutEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:inputType="number"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/signUp_Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -203,7 +206,7 @@
                 android:textSize="22sp"
                 android:background="@drawable/loginandsignup_button_effect"
                 android:fontFamily="@font/lato"
-                android:text="@string/signup_text"
+                android:text="@string/action_signup"
                 android:textColor="@color/headingNormalTextColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -217,7 +220,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/bottom_ConstraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/main_ConstraintLayout"
             tools:layout_editor_absoluteX="2dp">
 
@@ -263,6 +266,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/googleIcon_text"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/useOtherMethod_TextView"

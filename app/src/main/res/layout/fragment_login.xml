@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="fragment"
+            type="com.sudoajay.firebase_chat.logInSignUp.Login" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,6 +43,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/loginIcon_text"
                 app:srcCompat="@drawable/login_night" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -135,6 +139,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/lato"
+                android:onClick="@{() -> fragment.openSendFeedback()}"
                 android:text="@string/troubleLogin_text"
                 android:textColor="@color/colorAccent"
                 android:textSize="16sp"
@@ -142,7 +147,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/password_TextInputLayout" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/login_Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -152,7 +157,7 @@
                 android:textSize="20sp"
                 android:background="@drawable/loginandsignup_button_effect"
                 android:fontFamily="@font/lato"
-                android:text="@string/login_text"
+                android:text="@string/action_login"
                 android:textColor="@color/headingNormalTextColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -166,7 +171,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/bottom_ConstraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/main_ConstraintLayout"
             tools:layout_editor_absoluteX="2dp">
 
@@ -178,6 +183,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/lato"
                 android:text="@string/newUser_text"
+                android:onClick="@{() -> fragment.openSignUp()}"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -227,6 +233,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/googleIcon_text"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/useOtherMethod_TextView"

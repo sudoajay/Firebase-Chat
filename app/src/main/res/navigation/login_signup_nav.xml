@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_signup"
-    app:startDestination="@id/sendFeedback">
+    app:startDestination="@id/nav_login">
 
     <fragment
         android:id="@+id/nav_login"
@@ -12,16 +12,14 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_open_sendFeedback"
-            app:destination="@id/sendFeedback"
-            app:enterAnim="@anim/nav_default_pop_enter_anim"
-            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+            app:destination="@id/sendFeedback" />
 
         <action
-            android:id="@+id/action_global_nav_signup"
+            android:id="@+id/action_open_signup"
             app:destination="@id/nav_signup"
             app:enterAnim="@anim/fui_slide_in_right"
-            app:exitAnim="@anim/fui_slide_out_left"
-            />
+            app:exitAnim="@anim/fui_slide_out_left" />
+
     </fragment>
 
 
@@ -37,7 +35,6 @@
         android:name="com.sudoajay.firebase_chat.sendFeedback.SendFeedback"
         android:label="@string/send_feedback_text"
         tools:layout="@layout/activity_send_feedback" />
-
 
 
 </navigation>

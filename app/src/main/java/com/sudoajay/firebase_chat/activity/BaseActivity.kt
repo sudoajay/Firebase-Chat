@@ -1,6 +1,7 @@
 package com.sudoajay.firebase_chat.activity
 
 import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -26,9 +27,10 @@ open class BaseActivity : AppCompatActivity() {
         )
     }
 
-    fun isSystemDefaultOn(): Boolean {
-        return resources.configuration.uiMode and
-                Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+    companion object {
+        fun isSystemDefaultOn(resources:Resources) : Boolean {
+            return resources.configuration.uiMode and
+            Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+        }
     }
-
 }

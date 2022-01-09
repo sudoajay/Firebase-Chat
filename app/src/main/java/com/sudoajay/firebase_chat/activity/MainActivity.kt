@@ -4,22 +4,28 @@ import android.os.Build
 import android.os.Bundle
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.sudoajay.firebase_chat.R
 import com.sudoajay.firebase_chat.databinding.ActivityMainBinding
+import com.sudoajay.firebase_chat.logInSignUp.Login
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
     var TAG = "MainActivityTAG"
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     private var isDarkTheme: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        isDarkTheme = isSystemDefaultOn()
+        isDarkTheme = isSystemDefaultOn(resources)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!isDarkTheme) {
@@ -30,6 +36,7 @@ class MainActivity : BaseActivity() {
         }
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
 
     }
 }

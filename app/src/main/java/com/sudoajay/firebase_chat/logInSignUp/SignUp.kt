@@ -2,6 +2,7 @@ package com.sudoajay.firebase_chat.logInSignUp
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,10 @@ class SignUp : Fragment() {
         val myDrawerView = layoutInflater.inflate(R.layout.fragment_signup, null)
         binding = FragmentSignupBinding.inflate(layoutInflater, myDrawerView as ViewGroup, false)
 
+        isDarkTheme = BaseActivity.isSystemDefaultOn(resources)
+
+
+        binding.headingImageView.setImageResource(if(isDarkTheme) R.drawable.signup_night else R.drawable.signup)
 
         return binding.root
 

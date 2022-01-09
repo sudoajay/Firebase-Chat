@@ -69,7 +69,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/login_TextInputLayout"
+                android:id="@+id/emailOrPhone_TextInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/loginWith_TextView">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_TextInputLayoutEditText"
+                    android:id="@+id/emailOrPhone_TextInputLayoutEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -121,7 +121,7 @@
                 app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/login_TextInputLayout">
+                app:layout_constraintTop_toBottomOf="@+id/emailOrPhone_TextInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_TextInputLayoutEditText"
@@ -154,7 +154,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="80dp"
                 android:layout_marginBottom="8dp"
-                android:textSize="20sp"
+                android:textSize="22sp"
+                android:onClick="@{() -> fragment.clickLoginButton()}"
                 android:background="@drawable/loginandsignup_button_effect"
                 android:fontFamily="@font/lato"
                 android:text="@string/action_login"

@@ -47,7 +47,13 @@
     <string name="loginIcon_text">Login Icon</string>
     <string name="signUpIcon_text">Sign-Up Icon</string>
 
-    <string name="googleIcon_text">Google Login Icon</string>
+    <string name="googleIcon_text">Google Login Icon</string>3
+    <string name="errorLogin_text">User does not exist</string>
+    <string name="errorSignUp_text">Can\'t Create New Account</string>
+    <string name="emailOrPhoneEmpty_text">Please Write Email or PhoneNumber</string>
+    <string name="passwordEmpty_text">Please Write Password</string>
+    <string name="somethingEmpty_text">Please Write Something</string>
+
 
 
     <!--    Navigation Drawer-->

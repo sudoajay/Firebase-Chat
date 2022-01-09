@@ -17,6 +17,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.widget.doOnTextChanged
 import androidx.databinding.DataBindingUtil
 import com.sudoajay.firebase_chat.activity.BaseActivity
 import com.sudoajay.firebase_chat.R
@@ -51,6 +52,12 @@ class SendFeedback : BaseActivity() {
     }
 
     private fun reference() {
+
+        binding.feedbackEditText.editText?.doOnTextChanged { text, _, _, _ ->
+            if (!text.isNullOrBlank() )
+                binding.feedbackEditText.isErrorEnabled = false
+
+        }
 
         startForResult =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->

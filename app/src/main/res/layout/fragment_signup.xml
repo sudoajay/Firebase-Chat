@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="fragment"
+            type="com.sudoajay.firebase_chat.logInSignUp.SignUp" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -84,6 +86,7 @@
                 app:errorIconTint="@color/errorBoxColor"
                 app:errorTextColor="@color/errorBoxColor"
                 app:hintTextColor="@color/boxHoverColor"
+                app:layout_constraintBottom_toBottomOf="@+id/lastName_TextInputLayout"
                 app:layout_constraintEnd_toStartOf="@+id/lastName_TextInputLayout"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/signUpWith_TextView">
@@ -130,7 +133,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/signUp_TextInputLayout"
+                android:id="@+id/emailOrPhone_TextInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -143,17 +146,19 @@
                 app:boxStrokeColor="@color/boxHoverColor"
                 app:boxStrokeWidth="1dp"
                 app:boxStrokeWidthFocused="2dp"
-                app:endIconMode="clear_text"
                 app:counterTextColor="@color/errorBoxColor"
+                app:endIconMode="clear_text"
                 app:errorIconTint="@color/errorBoxColor"
                 app:errorTextColor="@color/errorBoxColor"
                 app:hintTextColor="@color/boxHoverColor"
+                app:layout_constraintBottom_toTopOf="@+id/password_TextInputLayout"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lastName_TextInputLayout">
+                app:layout_constraintTop_toBottomOf="@+id/firstName_TextInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/signUpTextInputLayoutEditText"
+                    android:id="@+id/emailOrPhone_TextInputLayoutEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
@@ -176,13 +181,13 @@
                 app:boxStrokeWidth="1dp"
                 app:boxStrokeWidthFocused="2dp"
                 app:counterTextColor="@color/errorBoxColor"
+                app:endIconMode="password_toggle"
                 app:errorIconTint="@color/errorBoxColor"
                 app:errorTextColor="@color/errorBoxColor"
                 app:hintTextColor="@color/boxHoverColor"
-                app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/signUp_TextInputLayout">
+                app:layout_constraintTop_toBottomOf="@+id/emailOrPhone_TextInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_TextInputLayoutEditText"
@@ -194,7 +199,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
             <Button
                 android:id="@+id/signUp_Button"
                 android:layout_width="match_parent"
@@ -203,11 +207,12 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="80dp"
                 android:layout_marginBottom="8dp"
-                android:textSize="22sp"
                 android:background="@drawable/loginandsignup_button_effect"
                 android:fontFamily="@font/lato"
+                android:onClick="@{() -> fragment.clickSignUpButton()}"
                 android:text="@string/action_signup"
                 android:textColor="@color/headingNormalTextColor"
+                android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.47"

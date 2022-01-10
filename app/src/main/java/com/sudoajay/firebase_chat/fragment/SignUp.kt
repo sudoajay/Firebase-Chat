@@ -73,8 +73,8 @@ class SignUp : Fragment() {
     fun clickSignUpButton() {
         if (!isStillError()) {
             val fullName = "${binding.firstNameTextInputLayoutEditText.text} ${binding.lastNameTextInputLayoutEditText.text}"
-            val emailOrPhone = binding.emailOrPhoneTextInputLayoutEditText.text.toString()
-            val pass = binding.passwordTextInputLayoutEditText.text.toString()
+            val emailOrPhone = binding.emailOrPhoneTextInputLayoutEditText.text.toString().replace("\\s".toRegex(),"")
+            val pass = binding.passwordTextInputLayoutEditText.text.toString().replace("\\s".toRegex(),"")
 
             signUp(fullName,emailOrPhone, pass)
         }
@@ -107,8 +107,8 @@ class SignUp : Fragment() {
         return isEmpty
     }
 
-    private fun throwToaster(value: String) {
-        Toaster.showToast(requireContext(), value)
+    private fun throwToaster(value: String?) {
+        Toaster.showToast(requireContext(), value?:"")
     }
 
 
@@ -124,7 +124,8 @@ class SignUp : Fragment() {
             } else {
                 // If sign in fails, display a message to the user.
                 Log.e(TAG, "createUserWithEmail:failure ${it.exception}")
-                throwToaster(getString(R.string.errorSignUp_text))
+                val split =it.exception.toString().split(": ")
+                throwToaster(split[1])
             }
         }
     }

@@ -71,7 +71,8 @@ class ChatActivity : AppCompatActivity() {
         setReference()
         super.onResume()
 
-        databaseReference.child("user").orderByChild("uid").equalTo(mAuth.currentUser?.uid.toString())
+        databaseReference.child("user").orderByChild("uid")
+            .equalTo(mAuth.currentUser?.uid.toString())
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     for (singleSnapshot in dataSnapshot.children) {

@@ -33,6 +33,7 @@ import javax.inject.Inject
 class FriendsActivity : BaseActivity() {
     private lateinit var binding: ActivityFriendsBinding
     val viewModel: FriendsViewModel by viewModels()
+
     @Inject
     lateinit var navigationDrawerBottomSheet: NavigationDrawerBottomSheet
 
@@ -75,7 +76,7 @@ class FriendsActivity : BaseActivity() {
 
     private fun setReference() {
         mAuth = FirebaseAuth.getInstance()
-        
+
 
         //      Setup Swipe Refresh
         binding.swipeRefresh.setColorSchemeResources(R.color.colorAccent)
@@ -109,7 +110,7 @@ class FriendsActivity : BaseActivity() {
         recyclerView.adapter = adapter
 
         lifecycleScope.launch {
-            viewModel.userList.collectLatest { UserList->
+            viewModel.userList.collectLatest { UserList ->
                 for (user in UserList) {
                     Log.i(TAG, "user ${user.fullName} user ${user.email}")
                 }
@@ -190,12 +191,9 @@ class FriendsActivity : BaseActivity() {
             R.id.logOut_optionMenu -> {
                 mAuth.signOut()
                 finish()
-                startActivity(
-                    Intent(
-                        applicationContext,
-                        MainActivity::class.java
-                    )
-                )
+                val i = Intent(this, MainActivity::class.java)
+                i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(i)
             }
             R.id.refresh_optionMenu -> refreshData()
             R.id.sendFeedBack_optionMenu -> {
@@ -220,7 +218,7 @@ class FriendsActivity : BaseActivity() {
     }
 
     fun showDarkMode() {
-        Toaster.showToast(applicationContext,getString(R.string.system_default_text))
+        Toaster.showToast(applicationContext, getString(R.string.system_default_text))
     }
 
     private fun refreshData() {
@@ -247,7 +245,7 @@ class FriendsActivity : BaseActivity() {
     private fun closeApp() {
         val homeIntent = Intent(Intent.ACTION_MAIN)
         homeIntent.addCategory(Intent.CATEGORY_HOME)
-        homeIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        homeIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(homeIntent)
     }
 }

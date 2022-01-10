@@ -23,7 +23,8 @@
         </activity>
         <activity android:name=".activity.BaseActivity" />
         <activity android:name=".activity.FriendsActivity" />
-        <activity android:name=".activity.ChatActivity" />
+        <activity
+            android:name=".activity.ChatActivity" />
         <activity android:name=".activity.sendFeedback.SendFeedback" />
 
         <meta-data

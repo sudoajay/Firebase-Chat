@@ -67,8 +67,8 @@ class Login : Fragment() {
 
     fun clickLoginButton(){
         if(!isStillError()) {
-            val emailOrPhone = binding.emailOrPhoneTextInputLayoutEditText.text.toString()
-            val pass = binding.passwordTextInputLayoutEditText.text.toString()
+            val emailOrPhone = binding.emailOrPhoneTextInputLayoutEditText.text.toString().replace("\\s".toRegex(),"")
+            val pass = binding.passwordTextInputLayoutEditText.text.toString().replace("\\s".toRegex(),"")
             login(emailOrPhone, pass)
         }
     }
@@ -92,8 +92,8 @@ class Login : Fragment() {
         return isEmpty
     }
 
-    private fun throwToaster(value:String){
-        Toaster.showToast(requireContext(),value)
+    private fun throwToaster(value:String?){
+        Toaster.showToast(requireContext(),value?:"")
     }
 
     private fun login(email:String , pass:String){
@@ -107,7 +107,8 @@ class Login : Fragment() {
             } else {
                 // If sign in fails, display a message to the user.
                 Log.e(TAG, "createUserWithEmail:failure ${it.exception}")
-                throwToaster(getString(R.string.errorLogin_text))
+                val split =it.exception.toString().split(": ")
+                throwToaster(split[1])
             }
         }
     }

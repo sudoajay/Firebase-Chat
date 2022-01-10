@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="activity"
+            type="com.sudoajay.firebase_chat.activity.ChatActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainBgColor">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constrainedHeight="true"
+            android:visibility="@{activity.hideProgress ? View.VISIBLE :View.GONE }"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/layout_for_receiver" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"
+            app:layout_constraintBottom_toTopOf="@+id/layout_gchat_chatbox" />
+
+        <RelativeLayout
+            android:id="@+id/layout_gchat_chatbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bgBoxColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <EditText
+                android:id="@+id/enterMessage_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toStartOf="@+id/send_ImageView"
+                android:background="@android:color/transparent"
+                android:hint="@string/enter_message_text"
+                android:inputType="text"
+                android:maxLines="6"
+                android:minHeight="48dp"
+                android:textColor="@color/headingNormalTextColor"
+                android:textColorHint="@color/headingNormalTextColor"
+                android:textCursorDrawable="@drawable/color_cursor" />
+
+            <ImageView
+                android:id="@+id/send_ImageView"
+                android:layout_width="70dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/send_image_view_button_text"
+                android:fontFamily="@font/lato"
+                android:onClick="@{() -> activity.sendButtonOnClick()}"
+                android:padding="5dp"
+                android:paddingStart="10dp"
+                app:srcCompat="@drawable/ic_send"
+                app:tint="@color/colorAccent"
+                tools:ignore="RtlSymmetry" />
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="@dimen/progress_circular_dimension"
+            android:layout_height="@dimen/progress_circular_dimension"
+            android:indeterminate="true"
+            android:theme="@style/ProgressBarTheme"
+            android:visibility="@{activity.hideProgress ? View.GONE :View.VISIBLE }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

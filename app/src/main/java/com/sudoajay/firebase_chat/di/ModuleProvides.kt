@@ -1,6 +1,7 @@
 package com.sudoajay.firebase_chat.di
 
 import android.content.Context
+import com.sudoajay.firebase_chat.ui.adapter.MessageAdapter
 import com.sudoajay.firebase_chat.ui.adapter.UserAdapter
 import dagger.Module
 import dagger.Provides
@@ -18,6 +19,10 @@ object ModuleProvides {
     @Provides
     fun providesUserAdapter( @ApplicationContext appContext: Context): UserAdapter = UserAdapter(appContext)
 
+
+    @Singleton
+    @Provides
+    fun providesMessageAdapter( @ApplicationContext appContext: Context): MessageAdapter = MessageAdapter(appContext)
 
 
 

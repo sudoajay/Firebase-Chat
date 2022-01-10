@@ -33,7 +33,6 @@ import javax.inject.Inject
 class FriendsActivity : BaseActivity() {
     private lateinit var binding: ActivityFriendsBinding
     val viewModel: FriendsViewModel by viewModels()
-
     @Inject
     lateinit var navigationDrawerBottomSheet: NavigationDrawerBottomSheet
 

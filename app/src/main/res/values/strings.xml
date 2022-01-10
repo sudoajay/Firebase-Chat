@@ -81,5 +81,10 @@
     <!--    Dark Mode -->
     <string name="system_default_text">Set by System Default</string>
 
+<!--    Chat activity-->
+    <string name="send_image_view_button_text">send Image view</string>
+    <string name="enter_message_text">Enter Message</string>
+    <string name="user_icon_text">User Icon</string>
+
 
 </resources>

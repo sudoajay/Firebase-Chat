@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/drawable/ic_navigation_drawer.xml" value="0.36875" />
         <entry key="app/src/main/res/drawable/ic_rate_us.xml" value="0.36875" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.36875" />
+        <entry key="app/src/main/res/drawable/ic_send.xml" value="0.36875" />
         <entry key="app/src/main/res/drawable/ic_tick.xml" value="0.36875" />
         <entry key="app/src/main/res/drawable/loginandsignup_button_effect.xml" value="0.36875" />
         <entry key="app/src/main/res/layout/activity_Signup.xml" value="0.35260416666666666" />
@@ -30,6 +31,9 @@
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/layout_dark_mode_bottom_sheet.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/layout_for_receiver.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/layout_for_sender.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/layout_from_us.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/layout_navigation_drawer_bottom_sheet.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/layout_system_info.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/layout_user.xml" value="0.35260416666666666" />

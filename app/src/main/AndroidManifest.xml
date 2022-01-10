@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".activity.FriendsActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.BaseActivity" />
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.FriendsActivity" />
+        <activity android:name=".activity.ChatActivity" />
         <activity android:name=".activity.sendFeedback.SendFeedback" />
 
         <meta-data

@@ -18,5 +18,8 @@ object ModuleProvides {
     @Provides
     fun providesUserAdapter( @ApplicationContext appContext: Context): UserAdapter = UserAdapter(appContext)
 
+
+
+
 }
 

@@ -112,14 +112,14 @@ class SignUp : Fragment() {
     }
 
 
-    private fun signUp(fullName:String , email: String, pass: String) {
+    private fun signUp(fullName:String , emailOrPhone: String, pass: String) {
 
-        mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
+        mAuth.createUserWithEmailAndPassword(emailOrPhone, pass).addOnCompleteListener {
             if (it.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
                 Log.i(TAG, "createUserWithEmail:success")
                 val user = mAuth.currentUser
-                addUserToDataBase(fullName,email, user?.uid!!)
+                addUserToDataBase(fullName,emailOrPhone, user?.uid!!)
                 Navigation.findNavController(binding.root).navigate(R.id.action_nav_signup_to_friendsActivity)
             } else {
                 // If sign in fails, display a message to the user.
@@ -129,9 +129,9 @@ class SignUp : Fragment() {
         }
     }
 
-    private fun addUserToDataBase(email: String ,fullName:String , uid:String){
+    private fun addUserToDataBase(fullName:String ,emailOrPhone: String, uid:String){
         val database = Firebase.database
         databaseReference = database.reference
-        databaseReference.child("user").child(uid).setValue(User(email,fullName,uid))
+        databaseReference.child("user").child(uid).setValue(User(fullName,emailOrPhone,uid))
     }
 }

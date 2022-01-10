@@ -2,8 +2,8 @@ package com.sudoajay.firebase_chat.activity
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.inputmethod.EditorInfo
@@ -12,10 +12,9 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.firebase.ui.auth.data.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.sudoajay.firebase_chat.R
 import com.sudoajay.firebase_chat.activity.bottomSheet.NavigationDrawerBottomSheet
@@ -26,31 +25,31 @@ import com.sudoajay.firebase_chat.helper.InsetDivider
 import com.sudoajay.firebase_chat.helper.Toaster
 import com.sudoajay.firebase_chat.ui.adapter.UserAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class FriendsActivity : AppCompatActivity() {
+class FriendsActivity : BaseActivity() {
     private lateinit var binding: ActivityFriendsBinding
-    private var userItems: List<User> = listOf()
-    private var doubleBackToExitPressedOnce = false
-    private lateinit var mAuth: FirebaseAuth
+    val viewModel: FriendsViewModel by viewModels()
+
     @Inject
     lateinit var navigationDrawerBottomSheet: NavigationDrawerBottomSheet
-    @Inject
-    lateinit var adapter :UserAdapter
 
-    val viewModel: FriendsViewModel by viewModels()
+    @Inject
+    lateinit var adapter: UserAdapter
+
     private var isDarkTheme: Boolean = false
+    private var doubleBackToExitPressedOnce = false
+    private lateinit var mAuth: FirebaseAuth
+    var TAG = "FriendsActivityTAG"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        isDarkTheme = BaseActivity.isSystemDefaultOn(resources)
+        isDarkTheme = isSystemDefaultOn(resources)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!isDarkTheme) {
@@ -67,7 +66,7 @@ class FriendsActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.bottomAppBar)
 
-
+        Log.i(TAG, "isnightM<ode $isDarkTheme")
     }
 
     override fun onResume() {
@@ -77,6 +76,7 @@ class FriendsActivity : AppCompatActivity() {
 
     private fun setReference() {
         mAuth = FirebaseAuth.getInstance()
+        
 
         //      Setup Swipe Refresh
         binding.swipeRefresh.setColorSchemeResources(R.color.colorAccent)
@@ -100,6 +100,7 @@ class FriendsActivity : AppCompatActivity() {
         setRecyclerView()
 
     }
+
     private fun setRecyclerView() {
         val recyclerView = binding.userItemRecyclerView
         val divider = getInsetDivider()
@@ -107,14 +108,24 @@ class FriendsActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
-        CoroutineScope(Dispatchers.IO).launch {
-            viewModel.userList.collectLatest {
-                adapter.userItems= it
-                adapter.notifyItemChanged(0,it.size)
+
+        lifecycleScope.launch {
+            viewModel.userList.collectLatest { UserList->
+                for (user in UserList) {
+                    Log.i(TAG, "user ${user.fullName} user ${user.email}")
+                }
+
+                UserList.sortWith(compareBy { it.fullName })
+                adapter.userItems = UserList
+                withContext(Dispatchers.Main) {
+                    adapter.notifyItemChanged(0, UserList.size)
+                }
             }
         }
 
+
     }
+
 
     private fun getInsetDivider(): RecyclerView.ItemDecoration {
         val dividerHeight = resources.getDimensionPixelSize(R.dimen.divider_height)
@@ -177,7 +188,7 @@ class FriendsActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> showNavigationDrawer()
-            R.id.logOut_optionMenu->{
+            R.id.logOut_optionMenu -> {
                 mAuth.signOut()
                 finish()
                 startActivity(
@@ -209,7 +220,11 @@ class FriendsActivity : AppCompatActivity() {
         )
     }
 
-    private fun refreshData(){
+    fun showDarkMode() {
+        Toaster.showToast(applicationContext,getString(R.string.system_default_text))
+    }
+
+    private fun refreshData() {
 
     }
 

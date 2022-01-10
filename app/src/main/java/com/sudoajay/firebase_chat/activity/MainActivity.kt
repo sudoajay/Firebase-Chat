@@ -19,7 +19,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        isDarkTheme = isSystemDefaultOn(resources)
+        isDarkTheme =  isSystemDefaultOn(resources)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!isDarkTheme) {

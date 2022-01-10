@@ -54,7 +54,6 @@
             android:id="@+id/swipe_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_marginBottom="?attr/actionBarSize"
 
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -62,6 +61,7 @@
                 android:id="@+id/userItem_RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:visibility="@{viewmodel.hideProgress ? View.VISIBLE :View.GONE }"
                 android:scrollbars="vertical" />
 
 
@@ -88,6 +88,7 @@
             app:srcCompat="@drawable/ic_dark_mode"
             app:backgroundTint="@color/bgBoxColor"
             app:fabSize="normal"
+            android:onClick="@{() -> activity.showDarkMode()}"
             app:layout_anchor="@id/bottomAppBar"
             app:tint="@color/colorAccent"
             android:contentDescription="@string/dark_mode_option_text" />

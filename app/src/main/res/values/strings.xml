@@ -78,5 +78,8 @@
     <string name="share_code_text">Share Code</string>
     <string name="workOnProgress_text">Work On Progress</string>
 
+    <!--    Dark Mode -->
+    <string name="system_default_text">Set by System Default</string>
+
 
 </resources>

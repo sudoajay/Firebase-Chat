@@ -50,7 +50,6 @@ fun DependencyHandler.implementFirebaseGoogle(){
 }
 
 fun DependencyHandler.implementDataBase(){
-    add("implementation", Dependencies.Storage.paging)
     add("implementation", Dependencies.Storage.preferenceDataStore)
     add("implementation", Dependencies.Storage.protoDataStore)
     add("implementation", Dependencies.Storage.protobuf)

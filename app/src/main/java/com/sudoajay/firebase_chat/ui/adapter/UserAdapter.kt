@@ -10,10 +10,11 @@ import com.sudoajay.firebase_chat.databinding.LayoutUserBinding
 import com.sudoajay.firebase_chat.ui.model.User
 
 class UserAdapter(val context: Context) : RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
-    var userItems: List<User> = listOf()
+    var userItems: MutableList<User> = mutableListOf()
 
     class MyViewHolder(layoutUserBinding: LayoutUserBinding) :
         RecyclerView.ViewHolder(layoutUserBinding.root) {
+
         var fullName = layoutUserBinding.fullNameTextView
     }
 
@@ -31,6 +32,7 @@ class UserAdapter(val context: Context) : RecyclerView.Adapter<UserAdapter.MyVie
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentUser = userItems[position]
+
         holder.fullName.text = currentUser.fullName
     }
 

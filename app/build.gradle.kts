@@ -11,6 +11,7 @@ plugins {
 //    Nav fragment args
     id("androidx.navigation.safeargs")
 
+
 }
 android {
     compileSdk =AppConfig.compileSdkVersion
@@ -56,9 +57,6 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.4.0")
-    implementation("com.google.android.material:material:1.4.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.2")
     implementBasicAndroid()
     implementDependencyInjection()
     implementAndroidX()
@@ -66,4 +64,3 @@ dependencies {
     implementTest()
     implementAndroidTest()
 }
-

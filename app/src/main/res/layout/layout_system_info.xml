@@ -6,7 +6,7 @@
     <data>
         <variable
             name="dialog"
-            type="com.sudoajay.firebase_chat.sendFeedback.SystemInfoDialog" />
+            type="com.sudoajay.firebase_chat.activity.sendFeedback.SystemInfoDialog" />
     </data>
 
     <LinearLayout

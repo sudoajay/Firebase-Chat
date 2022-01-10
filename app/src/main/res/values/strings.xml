@@ -30,7 +30,7 @@
     <string name="screen_Text">Screen Size : </string>
     <string name="network_type_text">Network Type : </string>
 
-<!--    Login $ Sign up-->
+    <!--    Login $ Sign up-->
     <string name="alreadyHaveAn_text">Already\nhave an\nAccount?</string>
     <string name="loginWith_text">Login with Email or Phone Number</string>
     <string name="emailPhoneNumber_text">Email Or Phone Number</string>
@@ -55,13 +55,13 @@
     <string name="somethingEmpty_text">Please Write Something</string>
 
 
-
     <!--    Navigation Drawer-->
     <string name="action_login">Login</string>
     <string name="action_signup">Sign-Up</string>
     <string name="action_sendFeedback">Send Feedback</string>
 
-
+    <!--  Data class  User -->
+    <string name="account_default_image_text">Account Default Image</string>
 
 
 </resources>

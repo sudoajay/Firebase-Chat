@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_login"
-        android:name="com.sudoajay.firebase_chat.logInSignUp.Login"
+        android:name="com.sudoajay.firebase_chat.fragment.Login"
         android:label="@string/action_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -25,14 +25,14 @@
 
     <fragment
         android:id="@+id/nav_signup"
-        android:name="com.sudoajay.firebase_chat.logInSignUp.SignUp"
+        android:name="com.sudoajay.firebase_chat.fragment.SignUp"
         android:label="@string/action_signup"
         tools:layout="@layout/fragment_signup">
 
     </fragment>
     <activity
         android:id="@+id/sendFeedback"
-        android:name="com.sudoajay.firebase_chat.sendFeedback.SendFeedback"
+        android:name="com.sudoajay.firebase_chat.activity.sendFeedback.SendFeedback"
         android:label="@string/send_feedback_text"
         tools:layout="@layout/activity_send_feedback" />
 

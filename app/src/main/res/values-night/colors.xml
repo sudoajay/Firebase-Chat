@@ -19,8 +19,6 @@
     <color name="textColor">#dae1e7</color>
 
 
-
-
     <!--    Send Feedback // Reminder -->
     <color name="boxTextColor">#dae1e7</color>
     <color name="boxHoverColor">#7DC4EC</color>
@@ -28,4 +26,7 @@
     <color name="feedbackBoxBgColor">#272727</color>
     <color name="dialogBgColorInfo">#272727</color>
     <color name="systemInfoBgColor">#171717</color>
+
+    <!--    Friends-->
+    <color name="divider">#dae1e7</color>
 </resources>

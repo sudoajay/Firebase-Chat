@@ -1,4 +1,4 @@
-package com.sudoajay.firebase_chat.logInSignUp
+package com.sudoajay.firebase_chat.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -8,10 +8,14 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.sudoajay.firebase_chat.R
 import com.sudoajay.firebase_chat.activity.BaseActivity
 import com.sudoajay.firebase_chat.databinding.FragmentSignupBinding
 import com.sudoajay.firebase_chat.helper.Toaster
+import com.sudoajay.firebase_chat.model.User
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,6 +24,7 @@ class SignUp : Fragment() {
     private var isDarkTheme: Boolean = false
     lateinit var binding: FragmentSignupBinding
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var databaseReference: DatabaseReference
     private var TAG = "SignUpTAG"
 
     override fun onCreateView(
@@ -65,14 +70,16 @@ class SignUp : Fragment() {
     }
 
     fun clickSignUpButton() {
-        if (!isCheckForEmptyText()) {
+        if (!isStillError()) {
+            val fullName = "${binding.firstNameTextInputLayoutEditText.text} ${binding.lastNameTextInputLayoutEditText.text}"
             val emailOrPhone = binding.emailOrPhoneTextInputLayoutEditText.text.toString()
             val pass = binding.passwordTextInputLayoutEditText.text.toString()
-            signUp(emailOrPhone, pass)
+
+            signUp(fullName,emailOrPhone, pass)
         }
     }
 
-    private fun isCheckForEmptyText(): Boolean {
+    private fun isStillError(): Boolean {
         var value = ""
         var isEmpty = true
         when {
@@ -94,7 +101,8 @@ class SignUp : Fragment() {
             }
             else -> isEmpty = false
         }
-        throwToaster(value)
+        if (value.isNotBlank())
+            throwToaster(value)
         return isEmpty
     }
 
@@ -103,19 +111,26 @@ class SignUp : Fragment() {
     }
 
 
-    private fun signUp(email: String, pass: String) {
+    private fun signUp(fullName:String , email: String, pass: String) {
 
         mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
             if (it.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
                 Log.i(TAG, "createUserWithEmail:success")
                 val user = mAuth.currentUser
-
+                throwToaster("Account created")
+                addUserToDataBase(fullName,email, mAuth.currentUser?.uid!!)
             } else {
                 // If sign in fails, display a message to the user.
                 Log.e(TAG, "createUserWithEmail:failure ${it.exception}")
                 throwToaster(getString(R.string.errorSignUp_text))
             }
         }
+    }
+
+    private fun addUserToDataBase(email: String ,fullName:String , uid:String){
+        val database = Firebase.database
+        databaseReference = database.reference
+        databaseReference.child("user").child(uid).setValue(User(email,fullName,uid))
     }
 }

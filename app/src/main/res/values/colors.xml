@@ -24,4 +24,8 @@
     <color name="feedbackBoxBgColor">#BEBEBE</color>
     <color name="dialogBgColorInfo">#2546ABEB</color>
     <color name="systemInfoBgColor">#ffffff</color>
+
+<!--    Friends-->
+    <color name="divider">#E6E6E6</color>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.sudoajay.firebase_chat.sendFeedback
+package com.sudoajay.firebase_chat.activity.sendFeedback
 
 import android.app.Activity
 import android.content.Intent

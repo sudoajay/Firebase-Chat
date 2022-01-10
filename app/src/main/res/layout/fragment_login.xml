@@ -7,7 +7,7 @@
 
         <variable
             name="fragment"
-            type="com.sudoajay.firebase_chat.logInSignUp.Login" />
+            type="com.sudoajay.firebase_chat.fragment.Login" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

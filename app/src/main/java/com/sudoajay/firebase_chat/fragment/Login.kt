@@ -1,21 +1,16 @@
-package com.sudoajay.firebase_chat.logInSignUp
+package com.sudoajay.firebase_chat.fragment
 
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.widget.doOnTextChanged
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.sudoajay.firebase_chat.activity.BaseActivity
 import com.sudoajay.firebase_chat.R
 import com.sudoajay.firebase_chat.databinding.FragmentLoginBinding
-import dagger.hilt.android.AndroidEntryPoint
 import com.google.firebase.auth.FirebaseAuth
 import com.sudoajay.firebase_chat.helper.Toaster
 
@@ -71,27 +66,30 @@ class Login : Fragment() {
     }
 
     fun clickLoginButton(){
-        if(!isCheckForEmptyText()) {
+        if(!isStillError()) {
             val emailOrPhone = binding.emailOrPhoneTextInputLayoutEditText.text.toString()
             val pass = binding.passwordTextInputLayoutEditText.text.toString()
             login(emailOrPhone, pass)
         }
     }
 
-    private fun isCheckForEmptyText():Boolean{
+    private fun isStillError():Boolean{
         var value = ""
-        if(binding.emailOrPhoneTextInputLayoutEditText.text.isNullOrBlank()) {
-            value = getString(R.string.emailOrPhoneEmpty_text)
-            binding.emailOrPhoneTextInputLayout.error = value
-            throwToaster(value)
-            return true
-        }else if (binding.passwordTextInputLayoutEditText.text.isNullOrBlank()){
-            value = getString(R.string.passwordEmpty_text)
-            binding.passwordTextInputLayout.error =value
-            throwToaster(value)
-            return true
+        var isEmpty = true
+        when {
+            binding.emailOrPhoneTextInputLayoutEditText.text.isNullOrBlank() -> {
+                value = getString(R.string.emailOrPhoneEmpty_text)
+                binding.emailOrPhoneTextInputLayout.error = value
+            }
+            binding.passwordTextInputLayoutEditText.text.isNullOrBlank() -> {
+                value = getString(R.string.passwordEmpty_text)
+                binding.passwordTextInputLayout.error =value
+            }
+            else -> isEmpty = false
         }
-        return false
+        if (value.isNotBlank())
+            throwToaster(value)
+        return isEmpty
     }
 
     private fun throwToaster(value:String){

@@ -4,14 +4,8 @@ import android.os.Build
 import android.os.Bundle
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.sudoajay.firebase_chat.R
 import com.sudoajay.firebase_chat.databinding.ActivityMainBinding
-import com.sudoajay.firebase_chat.logInSignUp.Login
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

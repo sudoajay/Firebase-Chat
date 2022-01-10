@@ -6,7 +6,7 @@
     <data>
         <variable
             name="activity"
-            type="com.sudoajay.firebase_chat.sendFeedback.SendFeedback" />
+            type="com.sudoajay.firebase_chat.activity.sendFeedback.SendFeedback" />
     </data>
 
     <ScrollView

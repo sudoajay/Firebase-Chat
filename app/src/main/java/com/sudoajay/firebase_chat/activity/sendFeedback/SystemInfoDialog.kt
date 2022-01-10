@@ -1,4 +1,4 @@
-package com.sudoajay.firebase_chat.sendFeedback
+package com.sudoajay.firebase_chat.activity.sendFeedback
 
 import android.annotation.SuppressLint
 import android.graphics.Color

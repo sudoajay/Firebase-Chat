@@ -13,7 +13,7 @@ buildscript {
         classpath(Plugins.pluginDaggerHilt)
         classpath(Plugins.googleService)
         classpath(Plugins.navArgs)
-
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
 
 
     }

@@ -57,7 +57,7 @@ class Login : Fragment() {
     }
 
     fun openSendFeedback(){
-        Navigation.findNavController(binding.root).navigate(R.id.action_open_sendFeedback)
+        Navigation.findNavController(binding.root).navigate(R.id.action_nav_login_to_sendFeedback)
 
     }
     fun openSignUp(){
@@ -102,7 +102,7 @@ class Login : Fragment() {
             if (it.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
                 Log.i(TAG, "createUserWithEmail:success")
-                val user = mAuth.currentUser
+                Navigation.findNavController(binding.root).navigate(R.id.action_nav_login_to_friendsActivity)
 
             } else {
                 // If sign in fails, display a message to the user.
@@ -111,4 +111,7 @@ class Login : Fragment() {
             }
         }
     }
+
+
+
 }

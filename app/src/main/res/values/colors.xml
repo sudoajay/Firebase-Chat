@@ -27,5 +27,7 @@
 
 <!--    Friends-->
     <color name="divider">#E6E6E6</color>
+    <color name="swipeBgColor">#ffffff</color>
+
 
 </resources>

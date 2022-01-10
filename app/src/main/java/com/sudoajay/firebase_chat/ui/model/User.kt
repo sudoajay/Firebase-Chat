@@ -1,4 +1,4 @@
-package com.sudoajay.firebase_chat.model
+package com.sudoajay.firebase_chat.ui.model
 
 data class User(
     var fullName:String? = null,

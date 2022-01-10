@@ -3,7 +3,13 @@
     <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@color/statusBarColor</item>
     </style>
+
+    <style name="ProgressBarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
 </resources>

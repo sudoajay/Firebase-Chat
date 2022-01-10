@@ -63,5 +63,20 @@
     <!--  Data class  User -->
     <string name="account_default_image_text">Account Default Image</string>
 
+    <!--  Friends  -->
+    <string name="friends_text">Friends</string>
+    <string name="search_optionMenu">Search</string>
+    <string name="refresh_optionMenu">Refresh</string>
+    <string name="logOut_optionMenu">Log out</string>
+    <string name="dark_mode_option_text">Dark Mode Option</string>
+    <string name="click_back_text">Click Back Again To Exit</string>
+
+    <!--    Navigation Drawer Bottom Sheet-->
+    <string name="developer_name">Created by Sudo Ajay</string>
+    <string name="rate_use_text">Rate-Us</string>
+    <string name="more_app_text">More App</string>
+    <string name="share_code_text">Share Code</string>
+    <string name="workOnProgress_text">Work On Progress</string>
+
 
 </resources>

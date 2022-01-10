@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
@@ -15,7 +16,7 @@ import com.sudoajay.firebase_chat.R
 import com.sudoajay.firebase_chat.activity.BaseActivity
 import com.sudoajay.firebase_chat.databinding.FragmentSignupBinding
 import com.sudoajay.firebase_chat.helper.Toaster
-import com.sudoajay.firebase_chat.model.User
+import com.sudoajay.firebase_chat.ui.model.User
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -118,8 +119,8 @@ class SignUp : Fragment() {
                 // Sign in success, update UI with the signed-in user's information
                 Log.i(TAG, "createUserWithEmail:success")
                 val user = mAuth.currentUser
-                throwToaster("Account created")
-                addUserToDataBase(fullName,email, mAuth.currentUser?.uid!!)
+                addUserToDataBase(fullName,email, user?.uid!!)
+                Navigation.findNavController(binding.root).navigate(R.id.action_nav_signup_to_friendsActivity)
             } else {
                 // If sign in fails, display a message to the user.
                 Log.e(TAG, "createUserWithEmail:failure ${it.exception}")

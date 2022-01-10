@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sudoajay.firebase_chat.R
 import com.sudoajay.firebase_chat.databinding.LayoutUserBinding
-import com.sudoajay.firebase_chat.model.User
+import com.sudoajay.firebase_chat.ui.model.User
 
 class UserAdapter(val context: Context) : RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
     var userItems: List<User> = listOf()

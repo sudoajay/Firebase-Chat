@@ -95,6 +95,7 @@
                     android:id="@+id/emailOrPhone_TextInputLayoutEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/color_cursor"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:textColor="@color/boxTextColor" />
@@ -128,6 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
+                    android:textCursorDrawable="@drawable/color_cursor"
                     android:inputType="textPassword"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>

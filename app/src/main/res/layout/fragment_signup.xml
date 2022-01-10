@@ -96,7 +96,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
-                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:inputType="textCapWords"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,7 +129,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
-                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:inputType="textCapWords"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -163,6 +165,7 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:inputType="text"
+                    android:textCursorDrawable="@drawable/color_cursor"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -194,6 +197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
+                    android:textCursorDrawable="@drawable/color_cursor"
                     android:inputType="textPassword"
                     android:textColor="@color/boxTextColor" />
             </com.google.android.material.textfield.TextInputLayout>

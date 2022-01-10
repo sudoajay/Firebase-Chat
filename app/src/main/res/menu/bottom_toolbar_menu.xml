@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search_optionMenu"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search_optionMenu"
+        app:iconTint="@color/colorAccent"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/logOut_optionMenu"
+        android:title="@string/logOut_optionMenu" />
+    <item
+        android:id="@+id/refresh_optionMenu"
+        android:title="@string/refresh_optionMenu" />
+
+    <item
+        android:id="@+id/sendFeedBack_optionMenu"
+        android:title="@string/send_feedback_text" />
+
+
+</menu>

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--Insert Divider Chat -->
+
+    <!--    BottomAppBar-->
+    <dimen name="toolbar_heigth">60dp</dimen>
+    <dimen name="toolbar_title_size">24sp</dimen>
+    <dimen name="progress_circular_dimension">48dp</dimen>
+    <!--Insert Divider Chat -->
     <dimen name="divider_height">0.8dp</dimen>
     <dimen name="divider_inset">72dp</dimen>
+
+    <!--    Navigation Drawer-->
+    <dimen name="text_view_margin_gap">12dp</dimen>
+    <dimen name="gap_margin_left_right">16dp</dimen>
 </resources>

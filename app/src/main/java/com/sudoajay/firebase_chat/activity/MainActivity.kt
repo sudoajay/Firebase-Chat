@@ -29,6 +29,7 @@ class MainActivity : BaseActivity() {
 
         }
 
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
 
